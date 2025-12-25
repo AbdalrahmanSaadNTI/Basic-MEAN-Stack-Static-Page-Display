@@ -9,6 +9,7 @@ Before you begin, ensure you have the following installed on your system:
 ### Required Software
 
 1. **Node.js** (version 14 or higher)
+
    - Download from: https://nodejs.org/
    - Verify installation by running in terminal/command prompt:
      ```bash
@@ -40,10 +41,20 @@ Follow these steps in order to set up and run the application:
 Open your terminal (Command Prompt on Windows, Terminal on Mac/Linux) and navigate to the project root directory:
 
 ```bash
-cd "D:\Others\Study\Freelancing\Tasks\Basic MEAN Stack Static Page Display"
+cd your-project-directory
 ```
 
-*Note: Replace the path above with your actual project path.*
+**Example:**
+
+```bash
+# Windows
+cd C:\Users\YourUsername\Projects\mean-stack-app
+
+# macOS/Linux
+cd ~/Projects/mean-stack-app
+```
+
+_Note: Replace `your-project-directory` with the actual path where you cloned or extracted this project._
 
 ### Step 2: Install Backend Dependencies
 
@@ -72,6 +83,7 @@ cd ..
 **What this does:** Installs Angular framework, TypeScript compiler, and all frontend dependencies.
 
 **Alternative (One Command):** You can also use the convenience script from the root directory:
+
 ```bash
 npm run install-all
 ```
@@ -87,13 +99,15 @@ cd ..
 ```
 
 **Expected output:** You should see:
+
 ```
 ✔ Browser application bundle generation complete.
 ✔ Copying assets complete.
 ✔ Index html generation complete.
 ```
 
-**What this does:** 
+**What this does:**
+
 - Compiles TypeScript to JavaScript
 - Bundles all Angular code
 - Copies assets (images, styles) to the `dist` folder
@@ -110,6 +124,7 @@ npm start
 ```
 
 **Expected output:**
+
 ```
 Server is running on http://localhost:3000
 ```
@@ -133,6 +148,7 @@ You should see the MEAN Stack Static Page with text content and images.
 Once you've completed the initial setup, you only need to:
 
 1. **If you made changes to Angular code or added/changed images:**
+
    ```bash
    cd angular-app
    npm run build
@@ -140,6 +156,7 @@ Once you've completed the initial setup, you only need to:
    ```
 
 2. **Start the server:**
+
    ```bash
    npm start
    ```
@@ -184,35 +201,38 @@ Once you've completed the initial setup, you only need to:
 ### To Add Your Own Images:
 
 1. **Place images in the assets folder:**
+
    - Location: `angular-app/src/assets/img/`
    - Supported formats: JPG, PNG, GIF, WebP, SVG
    - Recommended size: 400x300 pixels or larger
 
 2. **Update the component file:**
+
    - Open: `angular-app/src/app/app.component.ts`
    - Find the `images` array (around line 13)
    - Update the `url` paths to match your image filenames:
      ```typescript
      images = [
        {
-         url: 'assets/img/your-image1.jpg',
-         alt: 'Description of image 1',
-         title: 'Title for Image 1'
+         url: "assets/img/your-image1.jpg",
+         alt: "Description of image 1",
+         title: "Title for Image 1",
        },
        {
-         url: 'assets/img/your-image2.jpg',
-         alt: 'Description of image 2',
-         title: 'Title for Image 2'
+         url: "assets/img/your-image2.jpg",
+         alt: "Description of image 2",
+         title: "Title for Image 2",
        },
        {
-         url: 'assets/img/your-image3.jpg',
-         alt: 'Description of image 3',
-         title: 'Title for Image 3'
-       }
+         url: "assets/img/your-image3.jpg",
+         alt: "Description of image 3",
+         title: "Title for Image 3",
+       },
      ];
      ```
 
 3. **Rebuild the Angular app:**
+
    ```bash
    cd angular-app
    npm run build
@@ -230,6 +250,7 @@ Once you've completed the initial setup, you only need to:
 ### Issue: "Cannot find module" errors
 
 **Solution:** Make sure you've completed Step 2 and Step 3 (installing dependencies):
+
 ```bash
 npm install
 cd angular-app
@@ -239,7 +260,8 @@ cd ..
 
 ### Issue: Images not showing
 
-**Solution:** 
+**Solution:**
+
 1. Ensure images are in `angular-app/src/assets/img/`
 2. Rebuild the Angular app:
    ```bash
@@ -251,16 +273,18 @@ cd ..
 
 ### Issue: "Port 3000 already in use"
 
-**Solution:** 
+**Solution:**
+
 - Stop any other application using port 3000
 - Or change the port in `server.js` (line 6):
   ```javascript
-  const PORT = process.env.PORT || 3001;  // Change 3000 to 3001
+  const PORT = process.env.PORT || 3001; // Change 3000 to 3001
   ```
 
 ### Issue: Build fails with errors
 
 **Solution:**
+
 1. Make sure you're using Node.js v14 or higher
 2. Delete `node_modules` folders and reinstall:
    ```bash
@@ -272,7 +296,7 @@ cd ..
    npm install
    cd ..
    ```
-   *On Windows, use `rmdir /s /q node_modules` instead of `rm -rf`*
+   _On Windows, use `rmdir /s /q node_modules` instead of `rm -rf`_
 
 ### Issue: "ng: command not found"
 
@@ -309,14 +333,17 @@ cd ..
 ### To Change Text Content:
 
 1. **Edit the component TypeScript file:**
+
    - File: `angular-app/src/app/app.component.ts`
    - Change `title` and `description` properties
 
 2. **Edit the HTML template:**
+
    - File: `angular-app/src/app/app.component.html`
    - Modify any text, headings, or structure
 
 3. **Edit styles:**
+
    - File: `angular-app/src/app/app.component.css`
    - Modify colors, layout, spacing, etc.
 
